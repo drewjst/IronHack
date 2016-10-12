@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--CSS-->
+    <link rel="stylesheet" href="src/css/bootstrap.min.css">
+    <link rel="stylesheet" href="src/css/main.css">
+    <!--JS-->
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <title>VegOut</title>
+</head>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand page-scroll" href="#page-top"><span class="glyphicon glyphicon-grain"></span></a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                <li class="hidden">
+                    <a class="page-scroll" href="#page-top"></a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#maps">Maps</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#data">Data</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#seasons">Seasons</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#about">About</a>
+                </li>
+            </ul>
+        </div><!--/.navbar-collapse -->
+    </div><!--/.container -->
+</nav>
+<!--maps-->
+<section id="maps" class="maps-section">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a class="btn btn-primary" role="button" data-toggle="collapse" href="#mapPurdueMarket"
+                           aria-expanded="true">
+                            Purdue University Farmers Market
+                        </a>
+                    </div>
+                    <div class="panel-body">
+                        <div id="mapPurdueMarket" class="maps-initial"></div>
+                    </div>
+                    <div class="panel-footer">
+                        <a class="divider-a" href="http://www.lafayettefarmersmarket.com" target="_blank">lafayettefarmersmarket.com</a><br/>
+                        Thursdays, May through July, from 11:00 AM to 2:00 PM and Thursdays, August through October,
+                        from 11:00 AM to 2:00 PM
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a class="btn btn-primary" roll="button" data-toggle="collapse" href="#westLafMarket"
+                           aria-expanded="true">
+                            West Lafayette Farmers Market
+                        </a>
+                    </div>
+                    <div class="panel-body">
+                        <div id="westLafMarket" class="maps-initial"></div>
+                    </div>
+                    <div class="panel-footer">
+                        <a class="divider-a" href="" target="_blank">wl.in.gov/farmersmarket</a><br/>
+                        Wednesdays | 3:30 PM to 7:00 PM
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a class="btn btn-primary" role="button" data-toggle="collapse" href="#mapLafMarket" aria-expanded="true">
+                            Lafayette Farmers Market
+                        </a>
+                    </div>
+                    <div class="panel-body">
+                        <div id="mapLafMarket" class="maps-initial"></div>
+                    </div>
+                    <div class="panel-footer">
+                        <a class="divider-a" href="http://www.lafayettefarmersmarket.com" target="_blank">http://www.lafayettefarmersmarket.com</a><br/>
+                        Saturdays from 8:00 AM to 12:30 PM
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--data-->
+<div class="bs-callout bs-callout-primary">
+    <h4>Vegetable, Weather, and Agriculture Data</h4>
+</div>
+<section id="data" class="data-section">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="hpanel">
+                    <div class="panel-heading text-center" style="padding: 0; color:green;">
+                        <p class="divider-a">Tippecanoe County Mean Daily Maximum Temperature/p>
+                    </div>
+                    <div class="panel-body text-center" style="padding: 0;">
+                        <img class="img-responsive" src="src/images/meanTemp.JPG">
+                    </div>
+                    <div class="panel-footer text-center">
+                        <a class="divider-a"
+                           href="https://toolkit.climate.gov/climate-explorer2/location.php?county=Tippecanoe+County&city=Tippecanoe+County,%20IN&fips=18157&lat=40.34697310000001&lon=-86.8220341#"
+                           target="_blank">https://toolkit.climate.gov/</a><br/>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="hpanel">
+                    <div class="panel-heading text-center" style="padding: 0; color:green;">
+                        <p class="divider-a">Tippecanoe County Mean Daily Precipitation</p>
+                    </div>
+                    <div class="panel-body text-center" style="padding: 0;">
+                        <img class="img-responsive" src="src/images/MonthlyPercip.JPG">
+                    </div>
+                    <div class="panel-footer text-center">
+                        <a class="divider-a"
+                           href="https://toolkit.climate.gov/climate-explorer2/location.php?county=Tippecanoe+County&city=Tippecanoe+County,%20IN&fips=18157&lat=40.34697310000001&lon=-86.8220341#"
+                           target="_blank">https://toolkit.climate.gov/</a><br/>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="hpanel">
+                    <div class="panel-heading text-center" style="padding: 0; color:green;">
+                        <p class="divider-a">Agricultural, Crop, and Livestock Production</p>
+                    </div>
+                    <div class="panel-body text-center" style="padding: 0;">
+                        <img class="img-responsive" src="src/images/Production.png">
+                    </div>
+                    <div class="panel-footer text-center">
+                        <a class="divider-a"
+                           href="https://www.nass.usda.gov/Charts_and_Maps/Agricultural_Prices/received.php"
+                           target="_blank">https://www.nass.usda.gov/</a><br/>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<div class="bs-callout bs-callout-primary">
+    <h4>Interactive Vegetable Season Tree</h4>
+</div>
+<section id="seasons" class="season-section">
+    <div id="seasonContainer" class="container-fluid"></div>
+    <a class="divider-a" href="https://snaped.fns.usda.gov/nutrition-through-seasons/seasonal-produce" target="_blank">https://snaped.fns.usda.gov</a><br/>
+</section>
+<!--about-->
+<section id="about" class="about-section">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-1">
+                <div class="bs-callout bs-callout-primary">
+                    <h4>VegOut</h4>
+                    <a class="divider-a" target="_blank">http://www.goldironhack.com/</a>
+                    <img class="img-responsive" src="src/images/Git-Logo-2Color.png">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script type="text/javascript" src="src/js/jquery-3.1.0.min.js"></script>
+<script type="text/javascript" src="src/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="src/js/jquery.easing.min.js"></script>
+<script type="text/javascript" src="src/js/main.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC4lO1PjOC9xzRaOK86FJoht6VBFYcsB8&callback=marketMaps"></script>
+<!-- Tree Containing Vegtable Season Data -->
+<script> //TODO: Finish JSON and reference elsewhere
+// REF: https://snaped.fns.usda.gov/nutrition-through-seasons/seasonal-produce
+var seasonData = [
+    {
+        "name": "Seasons",
+        "parent": "null",
+        "children": [
+            {
+                "name": "Winter",
+                "parent": "Seasons",
+                "children": [
+                    {
+                        "name": "Apples",
+                        "parent": "Winter"
+                    },
+                    {
+                        "name": "Bananas",
+                        "parent": "Winter"
+                    },
+                    {
+                        "name": "Beets",
+                        "parent": "Winter"
+                    },
+                    {
+                        "name": "Brussels Sprouts",
+                        "parent": "Winter"
+                    },
+                    {
+                        "name": "Cabbage",
+                        "parent": "Winter"
+                    },
+                    {
+                        "name": "Carrots",
+                        "parent": "Winter"
+                    },
+                    {
+                        "name": "Celery",
+                        "parent": "Winter"
+                    },
+                    {
+                        "name": "Grapefruit",
+                        "parent": "Winter"
+                    },
+                    {
+                        "name": "Kale",
+                        "parent": "Winter"
+                    },
+                    {
+                        "name": "Leeks",
+                        "parent": "Winter"
+                    },
+                    {
+                        "name": "Lemons",
+                        "parent": "Winter"
+                    },
+                    {
+                        "name": "Onions",
+                        "parent": "Winter"
+                    },
+                    {
+                        "name": "Oranges",
+                        "parent": "Winter"
+                    },
+                    {
+                        "name": "Parsnips",
+                        "parent": "Winter"
+                    },
+                    {
+                        "name": "Pears",
+                        "parent": "Winter"
+                    },
+                    {
+                        "name": "Pineapple",
+                        "parent": "Winter"
+                    },
+                    {
+                        "name": "Potatoes",
+                        "parent": "Winter"
+                    },
+                    {
+                        "name": "Pumpkins",
+                        "parent": "Winter"
+                    },
+                    {
+                        "name": "Rutabagas",
+                        "parent": "Winter"
+                    },
+                    {
+                        "name": "Sweet Potatoes and Yams",
+                        "parent": "Winter"
+                    },
+                    {
+                        "name": "Turnips",
+                        "parent": "Winter"
+                    },
+                    {
+                        "name": "Winter Squash",
+                        "parent": "Winter"
+                    }
+                ]
+            },
+            {
+                "name": "Spring",
+                "parent": "Seasons",
+                "children": [
+                    {
+                        "name": "Apples",
+                        "parent": "Spring"
+                    },
+                    {
+                        "name": "Apricots",
+                        "parent": "Spring"
+                    },
+                    {
+                        "name": "Bananas",
+                        "parent": "Spring"
+                    },
+                    {
+                        "name": "Broccoli",
+                        "parent": "Spring"
+                    },
+                    {
+                        "name": "Cabbage",
+                        "parent": "Spring"
+                    },
+                    {
+                        "name": "Carrots",
+                        "parent": "Spring"
+                    },
+                    {
+                        "name": "Celery",
+                        "parent": "Spring"
+                    },
+                    {
+                        "name": "Collard Greens",
+                        "parent": "Spring"
+                    },
+                    {
+                        "name": "Garlic",
+                        "parent": "Spring"
+                    },
+                    {
+                        "name": "Lettuce",
+                        "parent": "Spring"
+                    },
+                    {
+                        "name": "Mushrooms",
+                        "parent": "Spring"
+                    },
+                    {
+                        "name": "Onions",
+                        "parent": "Spring"
+                    },
+                    {
+                        "name": "Peas",
+                        "parent": "Spring"
+                    },
+                    {
+                        "name": "Pineapple",
+                        "parent": "Spring"
+                    },
+                    {
+                        "name": "Radishes",
+                        "parent": "Spring"
+                    },
+                    {
+                        "name": "Rhubarb",
+                        "parent": "Spring"
+                    },
+                    {
+                        "name": "Spinach",
+                        "parent": "Spring"
+                    },
+                    {
+                        "name": "Strawberries",
+                        "parent": "Spring"
+                    },
+                    {
+                        "name": "Swiss Chard",
+                        "parent": "Spring"
+                    },
+                    {
+                        "name": "Turnips",
+                        "parent": "Spring"
+                    }
+                ]
+            },
+            {
+                "name": "Summer",
+                "parent": "Seasons",
+                "children": [
+                    {
+                        "name": "Apples",
+                        "parent": "Summer"
+                    },
+                    {
+                        "name": "Apricots",
+                        "parent": "Summer"
+                    },
+                    {
+                        "name": "Bananas",
+                        "parent": "Summer"
+                    },
+                    {
+                        "name": "Beets",
+                        "parent": "Summer"
+                    },
+                    {
+                        "name": "Bell Peppers",
+                        "parent": "Summer"
+                    },
+                    {
+                        "name": "Blackberries",
+                        "parent": "Summer"
+                    },
+                    {
+                        "name": "Blueberries",
+                        "parent": "Summer"
+                    },
+                    {
+                        "name": "Blueberries",
+                        "parent": "Summer"
+                    },
+                    {
+                        "name": "Carrots",
+                        "parent": "Summer"
+                    },
+                    {
+                        "name": "Cantaloupe/ Muskmelons",
+                        "parent": "Summer"
+                    },
+                    {
+                        "name": "Celery",
+                        "parent": "Summer"
+                    },
+                    {
+                        "name": "Cherries",
+                        "parent": "Summer"
+                    },
+                    {
+                        "name": "Collard Greens",
+                        "parent": "Summer"
+                    },
+                    {
+                        "name": "Corn",
+                        "parent": "Summer"
+                    },
+                    {
+                        "name": "Cucumbers",
+                        "parent": "Summer"
+                    },
+                    {
+                        "name": "Eggplant",
+                        "parent": "Summer"
+                    },
+                    {
+                        "name": "Garlic",
+                        "parent": "Summer"
+                    },
+                    {
+                        "name": "Green Beans",
+                        "parent": "Summer"
+                    },
+                    {
+                        "name": "Honeydew Melon",
+                        "parent": "Summer"
+                    },
+                    {
+                        "name": "Kiwifruit",
+                        "parent": "Summer"
+                    },
+                    {
+                        "name": "Lima Beans",
+                        "parent": "Summer"
+                    },
+                    {
+                        "name": "Mangos",
+                        "parent": "Summer"
+                    },
+                    {
+                        "name": "Nectarines",
+                        "parent": "Summer"
+                    },
+                    {
+                        "name": "Okra",
+                        "parent": "Summer"
+                    },
+                    {
+                        "name": "Peaches",
+                        "parent": "Summer"
+                    },
+                    {
+                        "name": "Plums",
+                        "parent": "Summer"
+                    },
+                    {
+                        "name": "Raspberries",
+                        "parent": "Summer"
+                    },
+                    {
+                        "name": "Strawberries",
+                        "parent": "Summer"
+                    },
+                    {
+                        "name": "Summer Squash & Zucchini",
+                        "parent": "Summer"
+                    },
+                    {
+                        "name": "Tomatillos",
+                        "parent": "Summer"
+                    },
+                    {
+                        "name": "Tomatoes",
+                        "parent": "Summer"
+                    },
+                    {
+                        "name": "Watermelon",
+                        "parent": "Summer"
+                    }
+                ]
+            },
+            {
+                "name": "Fall",
+                "parent": "Seasons",
+                "children": [
+                    {
+                        "name": "Apples",
+                        "parent": "Fall"
+                    },
+                    {
+                        "name": "Bananas",
+                        "parent": "Fall"
+                    },
+                    {
+                        "name": "Beets",
+                        "parent": "Fall"
+                    },
+                    {
+                        "name": "Bell Peppers",
+                        "parent": "Fall"
+                    },
+                    {
+                        "name": "Broccoli",
+                        "parent": "Fall"
+                    },
+                    {
+                        "name": "Brussels Sprouts",
+                        "parent": "Fall"
+                    },
+                    {
+                        "name": "Cabbage",
+                        "parent": "Fall"
+                    },
+                    {
+                        "name": "Carrots",
+                        "parent": "Fall"
+                    },
+                    {
+                        "name": "Cauliflower",
+                        "parent": "Fall"
+                    },
+                    {
+                        "name": "Celery",
+                        "parent": "Fall"
+                    },
+                    {
+                        "name": "Collard Greens",
+                        "parent": "Fall"
+                    },
+                    {
+                        "name": "Cranberries",
+                        "parent": "Fall"
+                    },
+                    {
+                        "name": "Garlic",
+                        "parent": "Fall"
+                    },
+                    {
+                        "name": "Ginger",
+                        "parent": "Fall"
+                    },
+                    {
+                        "name": "Grapes",
+                        "parent": "Fall"
+                    },
+                    {
+                        "name": "Green Beans",
+                        "parent": "Fall"
+                    },
+                    {
+                        "name": "Kale",
+                        "parent": "Fall"
+                    },
+                    {
+                        "name": "Lettuce",
+                        "parent": "Fall"
+                    },
+                    {
+                        "name": "Mangos",
+                        "parent": "Fall"
+                    },
+                    {
+                        "name": "Mushrooms",
+                        "parent": "Fall"
+                    },
+                    {
+                        "name": "Onions",
+                        "parent": "Fall"
+                    },
+                    {
+                        "name": "Parsnips",
+                        "parent": "Fall"
+                    },
+                    {
+                        "name": "Peas",
+                        "parent": "Fall"
+                    },
+                    {
+                        "name": "Pears",
+                        "parent": "Fall"
+                    },
+                    {
+                        "name": "Pineapple",
+                        "parent": "Fall"
+                    },
+                    {
+                        "name": "Potatoes",
+                        "parent": "Fall"
+                    },
+                    {
+                        "name": "Pumpkins",
+                        "parent": "Fall"
+                    },
+                    {
+                        "name": "Radishes",
+                        "parent": "Fall"
+                    },
+                    {
+                        "name": "Raspberries",
+                        "parent": "Fall"
+                    },
+                    {
+                        "name": "Rutabagas",
+                        "parent": "Fall"
+                    },
+                    {
+                        "name": "Spinach",
+                        "parent": "Fall"
+                    },
+                    {
+                        "name": "Sweet Potatoes and Yams",
+                        "parent": "Fall"
+                    },
+                    {
+                        "name": "Swiss Chard",
+                        "parent": "Fall"
+                    },
+                    {
+                        "name": "Turnips",
+                        "parent": "Fall"
+                    },
+                    {
+                        "name": "Winter Squash",
+                        "parent": "Fall"
+                    }
+
+                ]
+            }
+        ]
+    }
+];
+var margin = {top: 10, right: 100, bottom: 10, left: 100},
+        width = 1500 - margin.right - margin.left,
+        height = 1500 - margin.top - margin.bottom;
+
+var i = 0, duration = 750;
+var treeRoot;
+
+var tree = d3.layout.tree()
+        .size([height, width]);
+
+var diagonal;
+diagonal = d3.svg.diagonal()
+        .projection(function (d) {
+            return [d.y, d.x];
+        });
+
+var svg = d3.select("#seasonContainer").append("svg")
+        .attr("width", width + margin.right + margin.left)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+treeRoot = seasonData[0];
+treeRoot.x0 = height / 2;
+treeRoot.y0 = 0;
+update(treeRoot);
+
+d3.select(self.frameElement).style("height", "500px");
+
+function update(source) {
+    // Compute the new tree layout.
+    var nodes = tree.nodes(treeRoot).reverse(), links = tree.links(nodes);
+
+    // Normalize for fixed-depth.
+    nodes.forEach(function (d) {
+        d.y = d.depth * 180;
+    });
+
+    // Update the nodes…
+    var node = svg.selectAll("g.node").data(nodes, function (d) {
+        return d.id || (d.id = ++i);
+    });
+
+    // Enter any new nodes at the parent's previous position.
+    var nodeEnter = node.enter().append("g").attr("class", "node")
+            .attr("transform", function (d) {
+                return "translate(" + source.y0 + "," + source.x0 + ")";
+            })
+            .on("click", click);
+
+    nodeEnter.append("circle")
+            .attr("r", 1e-6)
+            .style("fill", function (d) {
+                return d._children ? "lightsteelblue" : "#fff";
+            });
+
+    nodeEnter.append("text")
+            .attr("x", function (d) {
+                return d.children || d._children ? -13 : 13;
+            })
+            .attr("dy", ".35em")
+            .attr("text-anchor", function (d) {
+                return d.children || d._children ? "end" : "start";
+            })
+            .text(function (d) {
+                return d.name;
+            })
+            .style("fill-opacity", 1e-6);
+
+    // Transition nodes to their new position.
+    var nodeUpdate = node.transition()
+            .duration(duration)
+            .attr("transform", function (d) {
+                return "translate(" + d.y + "," + d.x + ")";
+            });
+
+    nodeUpdate.select("circle")
+            .attr("r", 10)
+            .style("fill", function (d) {
+                return d._children ? "lightsteelblue" : "#fff";
+            });
+
+    nodeUpdate.select("text")
+            .style("fill-opacity", 1);
+
+    // Transition exiting nodes to the parent's new position.
+    var nodeExit = node.exit().transition()
+            .duration(duration)
+            .attr("transform", function (d) {
+                return "translate(" + source.y + "," + source.x + ")";
+            })
+            .remove();
+
+    nodeExit.select("circle")
+            .attr("r", 1e-6);
+
+    nodeExit.select("text")
+            .style("fill-opacity", 1e-6);
+
+    // Update the links…
+    var link = svg.selectAll("path.link")
+            .data(links, function (d) {
+                return d.target.id;
+            });
+
+    // Enter any new links at the parent's previous position.
+    link.enter().insert("path", "g")
+            .attr("class", "link")
+            .attr("d", function (d) {
+                var o = {x: source.x0, y: source.y0};
+                return diagonal({source: o, target: o});
+            });
+
+    // Transition links to their new position.
+    link.transition()
+            .duration(duration)
+            .attr("d", diagonal);
+
+    // Transition exiting nodes to the parent's new position.
+    link.exit().transition()
+            .duration(duration)
+            .attr("d", function (d) {
+                var o = {x: source.x, y: source.y};
+                return diagonal({source: o, target: o});
+            })
+            .remove();
+
+    // Stash the old positions for transition.
+    nodes.forEach(function (d) {
+        d.x0 = d.x;
+        d.y0 = d.y;
+    });
+}
+// Toggle children on click.
+function click(d) {
+    if (d.children) {
+        d._children = d.children;
+        d.children = null;
+    } else {
+        d.children = d._children;
+        d._children = null;
+    }
+    update(d);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+{
+  "name": "Seasons",
+  "parent": "null",
+  "children": [
+    {
+      "name": "Winter",
+      "parent": "Seasons",
+      "children": [
+        {
+          "name": "Apples",
+          "parent": "Winter"
+        },
+        {
+          "name": "Bananas",
+          "parent": "Winter"
+        },
+        {
+          "name": "Beets",
+          "parent": "Winter"
+        },
+        {
+          "name": "Brussels Sprouts",
+          "parent": "Winter"
+        },
+        {
+          "name": "Cabbage",
+          "parent": "Winter"
+        },
+        {
+          "name": "Carrots",
+          "parent": "Winter"
+        },
+        {
+          "name": "Celery",
+          "parent": "Winter"
+        },
+        {
+          "name": "Grapefruit",
+          "parent": "Winter"
+        },
+        {
+          "name": "Kale",
+          "parent": "Winter"
+        },
+        {
+          "name": "Leeks",
+          "parent": "Winter"
+        },
+        {
+          "name": "Lemons",
+          "parent": "Winter"
+        },
+        {
+          "name": "Onions",
+          "parent": "Winter"
+        },
+        {
+          "name": "Oranges",
+          "parent": "Winter"
+        }
+      ]
+    },
+    {
+      "name": "Spring",
+      "parent": "Seasons",
+      "children": [
+        {
+          "name": "Apples",
+          "parent": "Spring"
+        },
+        {
+          "name": "Apricots",
+          "parent": "Spring"
+        }
+      ]
+    },
+    {
+      "name": "Summer",
+      "parent": "Seasons",
+      "children": [
+        {
+          "name": "Blueberries",
+          "parent": "Summer"
+        },
+        {
+          "name": "Carrots",
+          "parent": "Summer"
+
+        }
+      ]
+    },
+    {
+      "name": "Fall",
+      "parent": "Seasons"
+    }
+  ]
+}
